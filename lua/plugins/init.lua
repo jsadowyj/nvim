@@ -38,6 +38,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
+      auto_install = true,
       ensure_installed = {
         "vim",
         "vimdoc",
@@ -113,7 +114,8 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = {
       filters = {
-        dotfiles = true,
+        dotfiles = false,
+        git_ignored = false
       },
       disable_netrw = true,
       hijack_netrw = true,
