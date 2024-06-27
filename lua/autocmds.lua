@@ -7,7 +7,6 @@ autocmd({"BufRead", "BufNewFile"}, {
      "**/tasks/*.y*ml",
      "**/vars/*.y*ml",
      "**/handlers/*.y*ml",
-     "**/*ansible*/*.y*ml",
      "**/playbooks/*.y*ml",
    },
   command = "set filetype=yaml.ansible"
