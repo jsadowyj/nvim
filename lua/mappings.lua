@@ -19,8 +19,8 @@ map("n", "<leader>q", ":q<CR>", { desc = "quit buffer" })
 
 map("n", "=", ":vertical resize +5<CR>")
 map("n", "-", ":vertical resize -5<CR>")
-map("n", "+", ":horiontal resize +2<CR>")
-map("n", "_", ":vertical resize -2<CR>")
+map("n", "+", ":horizontal resize +2<CR>")
+map("n", "_", ":horizontal resize -2<CR>")
 
 
 map("v", ">", ">gv", { desc = "select line on right indent" })
