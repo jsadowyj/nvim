@@ -10,6 +10,8 @@ map("n", "<leader>fm", function ()
   require("conform").format()
 end, { desc = "formatting" })
 
+map("n", "<Leader>bdo", ":BufDelOther<CR>", { desc = "Delete all other buffers" })
+
 map("n", "<Enter>", "o<Esc>", { desc = "insert newline" })
 map("n", "<S-Enter>", "O<Esc>", { desc = "insert newline above" })
 
