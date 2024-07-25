@@ -23,7 +23,7 @@ lspconfig["ansiblels"].setup({
     ansible = {
       ansible = {
         path = "ansible",
-        useFullyQualifiedCollectionNames = false
+        useFullyQualifiedCollectionNames = true
       },
       executionEnvironment = {
         enabled = false
