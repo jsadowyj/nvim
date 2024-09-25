@@ -86,6 +86,10 @@ return {
   },
 
   {
+    "nvim-pack/nvim-spectre"
+  },
+
+  {
     "mfussenegger/nvim-ansible",
     ft = { "yaml.ansible" },
   },
