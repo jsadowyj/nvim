@@ -12,8 +12,8 @@ end, { desc = "formatting" })
 
 map("n", "<Leader>bdo", ":BufDelOther<CR>", { desc = "Delete all other buffers" })
 
-map("n", "<Enter>", "o<Esc>", { desc = "insert newline" })
-map("n", "<S-Enter>", "O<Esc>", { desc = "insert newline above" })
+-- map("n", "<Enter>", "o<Esc>", { desc = "insert newline" })
+-- map("n", "<S-Enter>", "O<Esc>", { desc = "insert newline above" })
 
 map("n", "c", '"_c', { desc = "disable copy on change" })
 
