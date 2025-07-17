@@ -4,6 +4,7 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     yaml = { "prettier" },
+    python = { "isort" }
   },
 
   -- format_on_save = {
