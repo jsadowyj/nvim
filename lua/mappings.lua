@@ -26,6 +26,9 @@ map("n", "_", ":horizontal resize -2<CR>")
 
 map("v", ">", ">gv", { desc = "select line on right indent" })
 map("v", "<", "<gv", { desc = "select line on left indent" })
+map("n", "<leader>y", '"+y', { desc = "yank to clipboard" })
+map("n", "<leader>yy", '"+y', { desc = "yank line to clipboard" })
+map("v", "<leader>y", '"+y', { desc = "yank selection to clipboard" })
 
 map("t", "<C-Space>", "<C-\\><C-n>", { desc = "escape from terminal" })
 
