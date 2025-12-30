@@ -53,3 +53,33 @@ map("n", "<leader>sp", function()
 end, {
   desc = "Search on current file",
 })
+
+-- Gitsigns
+map("n", "]c", function()
+  if vim.wo.diff then return "]c" end
+  vim.schedule(function() require("gitsigns").next_hunk() end)
+  return "<Ignore>"
+end, { expr = true, desc = "Next git hunk" })
+
+map("n", "[c", function()
+  if vim.wo.diff then return "[c" end
+  vim.schedule(function() require("gitsigns").prev_hunk() end)
+  return "<Ignore>"
+end, { expr = true, desc = "Previous git hunk" })
+
+map("n", "<leader>hs", function() require("gitsigns").stage_hunk() end, { desc = "Stage hunk" })
+map("n", "<leader>hr", function() require("gitsigns").reset_hunk() end, { desc = "Reset hunk" })
+map("v", "<leader>hs", function() require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Stage hunk" })
+map("v", "<leader>hr", function() require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, { desc = "Reset hunk" })
+map("n", "<leader>hS", function() require("gitsigns").stage_buffer() end, { desc = "Stage buffer" })
+map("n", "<leader>hu", function() require("gitsigns").undo_stage_hunk() end, { desc = "Undo stage hunk" })
+map("n", "<leader>hR", function() require("gitsigns").reset_buffer() end, { desc = "Reset buffer" })
+map("n", "<leader>hp", function() require("gitsigns").preview_hunk() end, { desc = "Preview hunk" })
+map("n", "<leader>hb", function() require("gitsigns").blame_line({ full = true }) end, { desc = "Blame line" })
+map("n", "<leader>hd", function() require("gitsigns").diffthis() end, { desc = "Diff this" })
+map("n", "<leader>hD", function() require("gitsigns").diffthis("~") end, { desc = "Diff this ~" })
+
+-- Todo comments
+map("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
+map("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
