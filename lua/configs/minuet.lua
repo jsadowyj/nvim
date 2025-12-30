@@ -43,9 +43,9 @@ require("minuet").setup({
   virtualtext = {
     auto_trigger_ft = {},
     keymap = {
-      accept = "<A-A>",
-      accept_line = "<A-a>",
-      accept_n_lines = "<A-z>",
+      accept = nil,
+      accept_line = nil,
+      accept_n_lines = nil,
       next = "<A-]>",
       prev = "<A-[>",
       dismiss = "<A-e>",

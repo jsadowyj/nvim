@@ -84,8 +84,24 @@ map("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Ne
 map("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
+-- Telescope git
+map("n", "<leader>fg", "<cmd>Telescope git_status<cr>", { desc = "Find git modified files" })
+
 -- Minuet AI
 map("n", "<leader>mt", "<cmd>Minuet virtualtext toggle<cr>", { desc = "Toggle Minuet AI" })
 
--- Telescope git
-map("n", "<leader>fg", "<cmd>Telescope git_status<cr>", { desc = "Find git modified files" })
+-- Minuet accept keymaps that close cmp first to prevent ghost text from disappearing
+map("i", "<A-A>", function()
+  require("cmp").abort()
+  require("minuet.virtualtext").action.accept()
+end, { desc = "Accept Minuet completion" })
+
+map("i", "<A-a>", function()
+  require("cmp").abort()
+  require("minuet.virtualtext").action.accept_line()
+end, { desc = "Accept Minuet line" })
+
+map("i", "<A-z>", function()
+  require("cmp").abort()
+  require("minuet.virtualtext").action.accept_n_lines()
+end, { desc = "Accept Minuet n lines" })
