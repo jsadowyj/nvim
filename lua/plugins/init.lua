@@ -58,6 +58,10 @@ return {
         "python",
         "terraform",
       },
+      indent = {
+        enable = true,
+        disable = { "yaml" },
+      },
     },
   },
 
