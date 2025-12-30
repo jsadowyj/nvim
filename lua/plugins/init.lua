@@ -32,6 +32,7 @@ return {
         "gopls",
         "ansible-language-server",
         "python-lsp-server",
+        "terraform-ls",
       },
     },
   },
