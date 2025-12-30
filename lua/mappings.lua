@@ -83,3 +83,6 @@ map("n", "<leader>hD", function() require("gitsigns").diffthis("~") end, { desc 
 map("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
 map("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+
+-- Minuet AI
+map("n", "<leader>mt", "<cmd>Minuet virtualtext toggle<cr>", { desc = "Toggle Minuet AI" })

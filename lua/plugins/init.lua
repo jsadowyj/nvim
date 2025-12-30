@@ -108,6 +108,15 @@ return {
     ft = { "yaml.ansible" },
   },
 
+  -- AI code completion
+  {
+    "milanglacier/minuet-ai.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = false,
+    config = function()
+      require "configs.minuet"
+    end,
+  },
 
   -- Telescope fzf native for faster fuzzy finding
   {
