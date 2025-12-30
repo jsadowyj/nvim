@@ -30,7 +30,7 @@ require("minuet").setup({
     },
     openai_fim_compatible = {
       end_point = openai_compatible_endpoint,
-      api_key = "x",
+      api_key = "TERM",
       model = openai_compatible_model,
       name = openai_compatible_model,
       stream = true,
