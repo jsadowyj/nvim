@@ -13,6 +13,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    version = "v1.*",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
