@@ -86,3 +86,6 @@ map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
 -- Minuet AI
 map("n", "<leader>mt", "<cmd>Minuet virtualtext toggle<cr>", { desc = "Toggle Minuet AI" })
+
+-- Telescope git
+map("n", "<leader>fg", "<cmd>Telescope git_status<cr>", { desc = "Find git modified files" })
