@@ -133,10 +133,12 @@ return {
   -- Debug Adapter Protocol
   {
     "mfussenegger/nvim-dap",
+    lazy = false,
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
       "leoluz/nvim-dap-go",
+      "mfussenegger/nvim-dap-python",
     },
     config = function()
       require "configs.dap"
