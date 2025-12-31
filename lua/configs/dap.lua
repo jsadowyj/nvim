@@ -34,18 +34,19 @@ end
 
 -- Keymaps
 local map = vim.keymap.set
-map("n", "<leader>db", dap.toggle_breakpoint, { desc = "DAP toggle breakpoint" })
-map("n", "<leader>dB", function()
+
+-- Alt keys (quick access while debugging)
+map("n", "<A-c>", dap.continue, { desc = "DAP continue" })
+map("n", "<A-n>", dap.step_over, { desc = "DAP step over" })
+map("n", "<A-s>", dap.step_into, { desc = "DAP step into" })
+map("n", "<A-o>", dap.step_out, { desc = "DAP step out" })
+map("n", "<A-b>", dap.toggle_breakpoint, { desc = "DAP toggle breakpoint" })
+map("n", "<A-B>", function()
   dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 end, { desc = "DAP conditional breakpoint" })
-map("n", "<leader>dc", dap.continue, { desc = "DAP continue" })
-map("n", "<leader>di", dap.step_into, { desc = "DAP step into" })
-map("n", "<leader>do", dap.step_over, { desc = "DAP step over" })
-map("n", "<leader>dO", dap.step_out, { desc = "DAP step out" })
-map("n", "<leader>dr", dap.repl.open, { desc = "DAP open REPL" })
-map("n", "<leader>dl", dap.run_last, { desc = "DAP run last" })
-map("n", "<leader>du", dapui.toggle, { desc = "DAP toggle UI" })
-map("n", "<leader>dt", dap.terminate, { desc = "DAP terminate" })
+map("n", "<A-t>", dap.terminate, { desc = "DAP terminate" })
+map("n", "<A-u>", dapui.toggle, { desc = "DAP toggle UI" })
+map("n", "<A-r>", dap.repl.open, { desc = "DAP open REPL" })
 
 -- Go specific
 map("n", "<leader>dgt", function()

@@ -128,16 +128,15 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 
 | Key | Action |
 |-----|--------|
-| `<leader>db` | Toggle breakpoint |
-| `<leader>dB` | Conditional breakpoint |
-| `<leader>dc` | Start/continue debugging |
-| `<leader>do` | Step over |
-| `<leader>di` | Step into |
-| `<leader>dO` | Step out |
-| `<leader>dr` | Open REPL |
-| `<leader>dl` | Run last |
-| `<leader>du` | Toggle DAP UI |
-| `<leader>dt` | Terminate |
+| `<A-c>` | Continue |
+| `<A-n>` | Step over (next) |
+| `<A-s>` | Step into |
+| `<A-o>` | Step out |
+| `<A-b>` | Toggle breakpoint |
+| `<A-B>` | Conditional breakpoint |
+| `<A-t>` | Terminate |
+| `<A-u>` | Toggle DAP UI |
+| `<A-r>` | Open REPL |
 | `<leader>dpt` | Debug Python test method |
 | `<leader>dpc` | Debug Python test class |
 | `<leader>dgt` | Debug Go test |
