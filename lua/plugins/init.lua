@@ -33,6 +33,7 @@ return {
         "ansible-language-server",
         "python-lsp-server",
         "terraform-ls",
+        "ruby-lsp"
       },
     },
   },
