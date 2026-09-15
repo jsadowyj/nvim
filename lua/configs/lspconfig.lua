@@ -49,3 +49,23 @@ lspconfig["ansiblels"].setup({
   capabilities = capabilities,
   on_init = on_init,
 })
+
+-- cooklang is not bundled with lspconfig, so register it as a custom server
+local configs = require "lspconfig.configs"
+if not configs.cooklang then
+  configs.cooklang = {
+    default_config = {
+      cmd = { "cook", "lsp" },
+      filetypes = { "cook" },
+      root_dir = lspconfig.util.root_pattern(".git"),
+      single_file_support = true,
+    },
+  }
+end
+
+-- highlighting comes from treesitter; nvchad's on_init disables the server's semantic tokens so they don't override it
+lspconfig["cooklang"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_init = on_init,
+})

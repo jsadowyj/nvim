@@ -40,6 +40,10 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    init = function()
+      -- the cooklang parser is named differently from the "cook" filetype
+      vim.treesitter.language.register("cooklang", "cook")
+    end,
     opts = {
       auto_install = true,
       ensure_installed = {
@@ -58,6 +62,7 @@ return {
         "yaml",
         "python",
         "terraform",
+        "cooklang",
       },
       indent = {
         enable = true,
