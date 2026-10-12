@@ -81,6 +81,45 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 |-----|--------|
 | `<C-Space>` | Escape terminal mode |
 
+### LSP
+
+Neovim built-in defaults (available whenever an LSP is attached):
+
+| Key | Action |
+|-----|--------|
+| `K` | Hover documentation |
+| `grn` | Rename symbol |
+| `gra` | Code actions (also visual) |
+| `grr` | References |
+| `gri` | Implementation |
+| `grt` | Type definition |
+| `grx` | Run codelens |
+| `gO` | Document symbols |
+| `<C-s>` (insert/visual) | Signature help |
+
+NvChad (set on LSP attach):
+
+| Key | Action |
+|-----|--------|
+| `gd` | Go to definition |
+| `gD` | Go to declaration |
+| `<leader>D` | Go to type definition |
+| `<leader>ra` | Rename (NvChad renamer) |
+| `<leader>wa` | Add workspace folder |
+| `<leader>wr` | Remove workspace folder |
+| `<leader>wl` | List workspace folders |
+
+### Diagnostics
+
+| Key | Action |
+|-----|--------|
+| `]d` | Next diagnostic |
+| `[d` | Previous diagnostic |
+| `]D` | Last diagnostic in buffer |
+| `[D` | First diagnostic in buffer |
+| `<C-w>d` | Show diagnostics under cursor |
+| `<leader>ds` | Diagnostics to location list |
+
 ### Search & Replace (Spectre)
 
 | Key | Action |
