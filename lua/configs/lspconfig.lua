@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "terraformls", "gopls", "jsonnet_ls", "jinja_lsp", "pylsp", "ruby_lsp"}
+local servers = { "html", "cssls", "terraformls", "gopls", "jsonnet_ls", "jinja_lsp", "pylsp"}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -14,6 +14,15 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- Root on Gemfile.lock so nested engines (e.g. defend/) with a bare Gemfile
+-- resolve to the parent app instead of crashing ruby-lsp (exit code 78).
+lspconfig["ruby_lsp"].setup({
+  root_dir = lspconfig.util.root_pattern("Gemfile.lock", ".git"),
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+})
 
 lspconfig["ansiblels"].setup({
   filetypes = {
