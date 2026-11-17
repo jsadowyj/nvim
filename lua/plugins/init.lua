@@ -227,6 +227,9 @@ return {
         root_folder_label = false,
         highlight_git = true,
         highlight_opened_files = "none",
+        -- Don't render "name ➛ /target/path" for symlinks: with adaptive_size, long targets
+        -- (e.g. the terragrunt-cache .terraform links) stretch the tree across the screen
+        symlink_destination = false,
 
         indent_markers = {
           enable = true,
