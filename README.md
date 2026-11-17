@@ -120,6 +120,14 @@ NvChad (set on LSP attach):
 | `<C-w>d` | Show diagnostics under cursor |
 | `<leader>ds` | Diagnostics to location list |
 
+### Grep (Telescope)
+
+| Key | Action |
+|-----|--------|
+| `<leader>fw` | Live grep whole project |
+| `<leader>fW` | Live grep in current file's directory |
+| `<leader>fw` (in nvim-tree) | Live grep in folder under cursor |
+
 ### Search & Replace (Spectre)
 
 | Key | Action |

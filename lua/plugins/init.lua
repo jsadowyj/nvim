@@ -174,6 +174,24 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
+      on_attach = function(bufnr)
+        local api = require "nvim-tree.api"
+        api.config.mappings.default_on_attach(bufnr)
+
+        -- Live grep scoped to the folder under the cursor (or the file's parent folder)
+        vim.keymap.set("n", "<leader>fw", function()
+          local node = api.tree.get_node_under_cursor()
+          if not node or not node.absolute_path then
+            return
+          end
+          local dir = node.type == "directory" and node.absolute_path
+            or vim.fn.fnamemodify(node.absolute_path, ":h")
+          require("telescope.builtin").live_grep {
+            search_dirs = { dir },
+            prompt_title = "Live Grep in " .. vim.fn.fnamemodify(dir, ":~:."),
+          }
+        end, { buffer = bufnr, noremap = true, silent = true, nowait = true, desc = "nvim-tree: Live grep in folder" })
+      end,
       filters = {
         dotfiles = false,
         git_ignored = false

@@ -84,6 +84,15 @@ map("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Ne
 map("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
+-- Live grep scoped to the current file's directory
+map("n", "<leader>fW", function()
+  local dir = vim.fn.expand "%:p:h"
+  require("telescope.builtin").live_grep {
+    search_dirs = { dir },
+    prompt_title = "Live Grep in " .. vim.fn.fnamemodify(dir, ":~:."),
+  }
+end, { desc = "telescope live grep in current file's dir" })
+
 -- Telescope git
 map("n", "<leader>fg", "<cmd>Telescope git_status<cr>", { desc = "Find git modified files" })
 
