@@ -19,3 +19,6 @@ autocmd({"BufRead", "BufNewFile"}, {
    },
   command = "set filetype=terraform"
  })
+
+-- Link terragrunt-cached .terraform dirs so terraform-ls can resolve module outputs
+require("configs.terragrunt").setup()

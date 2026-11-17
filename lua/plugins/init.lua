@@ -62,6 +62,7 @@ return {
         "yaml",
         "python",
         "terraform",
+        "hcl",
         "cooklang",
       },
       indent = {

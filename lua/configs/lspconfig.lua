@@ -72,6 +72,26 @@ if not configs.cooklang then
   }
 end
 
+-- terragrunt-ls is not bundled with lspconfig v1 nor in mason; install the binary from
+-- https://github.com/gruntwork-io/terragrunt-ls/releases onto $PATH
+if not configs.terragrunt_ls then
+  configs.terragrunt_ls = {
+    default_config = {
+      cmd = { "terragrunt-ls" },
+      filetypes = { "hcl" },
+      -- only attach inside terragrunt projects, not to other HCL (packer, nomad, ...)
+      root_dir = lspconfig.util.root_pattern("root.hcl", "terragrunt.hcl"),
+      single_file_support = false,
+    },
+  }
+end
+
+lspconfig["terragrunt_ls"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_init = on_init,
+})
+
 -- highlighting comes from treesitter; nvchad's on_init disables the server's semantic tokens so they don't override it
 lspconfig["cooklang"].setup({
   on_attach = on_attach,
